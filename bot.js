@@ -5,7 +5,7 @@ const prefix = "-"
 client.on('message', message => {
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
-        let support = message.guild.roles.find("name","Support");
+        let support = message.guild.roles.find("name","Support Team");
         let ticketsStation = message.guild.channels.find("name", "TICKETS");
         if(!args) {
             return message.channel.send('Please type a subject for the ticket.');
@@ -34,12 +34,12 @@ client.on('message', message => {
                                     READ_MESSAGES: true
                                 });
                     let embed = new Discord.RichEmbed()
-                                .setTitle('**شكوى جديده**')
+                                .setTitle('**تيكيت جديد**')
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
                                 .addField('الموضوع', args)
                                 .addField('المرسل', message.author)
-                                .addField('Channel', `<#${message.channel.id}>`);
+                                .addField('الروم', `<#${message.channel.id}>`);
 
                                 ticket.sendEmbed(embed);
                 }) .catch();
