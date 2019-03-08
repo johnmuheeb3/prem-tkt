@@ -34,12 +34,12 @@ client.on('message', message => {
                                     READ_MESSAGES: true
                                 });
                     let embed = new Discord.RichEmbed()
-                                .setTitle('**تيكيت جديد**')
+                                .setTitle('**New Ticket**')
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
-                                .addField('الموضوع', args)
-                                .addField('المرسل', message.author)
-                                .addField('الروم', `<#${message.channel.id}>`);
+                                .addField('Subject', args)
+                                .addField('By', message.author)
+                                .addField('The Room', `<#${message.channel.id}>`);
 
                                 ticket.sendEmbed(embed);
                 }) .catch();
